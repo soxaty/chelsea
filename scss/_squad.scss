@@ -1,0 +1,211 @@
+.main-chelsea-players {
+ 
+    border: 0;
+    padding: 0 0 10rem 0;
+ 
+
+    .hero {
+        width: 100%;
+        height: 60vh;
+        background-color: $color-background-hover;
+        background-image: url(../recursos/background.png);
+        padding: 0;
+
+        div {
+            margin-left: 2rem;
+            color: white;
+
+            h5 {
+                font-family: $fuente-secundaria;
+                font-size: 2rem;
+                font-weight: bolder;
+            }
+
+            h1 {
+                font-family: $fuente-titulo1;
+                font-size: 8rem;
+
+
+            }
+        }
+    }
+
+    .players-coach-section {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        .row {
+
+            .card {
+                display: flex;
+                flex-direction: row;
+                box-sizing: border-box;
+                border: 0.0015rem solid black;
+                border-radius: 0;
+
+
+                .player-details {
+                    .player-number-container {
+                        position: absolute;
+                        top: 0 + 1%;
+                        right: 0 + 3%;
+
+                        .player-number {
+                            font-size: 8rem;
+                            font-family: $fuente-titulo1;
+                            color: rgb(190, 187, 187);
+                        }
+                    }
+
+                    .player-name-container {
+                        position: absolute;
+                        bottom: 0 + 5%;
+                        right: 0 + 1%;
+
+                        .first-name-container {
+                            display: flex;
+                            justify-content: end;
+
+                            .first-name {
+                                color: $color-azul-principal;
+                                font-family: $fuente-principal;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .last-name-container {
+                            .last-name {
+                                background-color: $color-azul-principal;
+                                padding: 0.2rem 1rem;
+                                text-transform: uppercase;
+                                font-size: 3rem;
+                                font-family: $fuente-titulo1;
+                                color: white;
+
+                            }
+
+                        }
+
+
+                        .position-container {
+                            display: flex;
+                            justify-content: end;
+
+                            .position {
+                                font-size: 1rem;
+                                font-weight: bolder;
+                                color: $color-azul-principal;
+                                font-family: $fuente-principal;
+
+                            }
+                        }
+
+
+                    }
+
+                    .player-image {
+                        width: 100%;
+                        height: 50vh;
+                        object-fit: contain;
+                    }
+
+                }
+
+                &:hover {
+                    background-color: $color-background-hover;
+                    border: 0.0015rem white solid;
+
+                    .player-details {
+                        .player-number-container {
+                            .player-number {
+                                color: white;
+                            }
+                        }
+
+                        .player-name-container {
+                            .first-name-container {
+                                .first-name {
+                                    color: white;
+                                    font-weight: bolder;
+                                }
+                            }
+
+                            .last-name-container {
+                                .last-name {
+                                    border: 0.025rem white solid;
+
+                                }
+
+                            }
+
+                            .position-container {
+                                .position {
+                                    color: white;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+
+}
+
+.women-chelsea-players {
+    .hero {
+        background-color: $color-background-hover2;
+        background-image: url(../recursos/background.png);
+    }
+
+    .players-coach-section {
+        .row {
+            .card {
+                &:hover {
+                    background-color: $color-background-hover2;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .main-chelsea-players {
+        .hero {
+            height: 20vh;
+            div {
+                margin-left: 0.2rem;
+                h5 {
+                    font-size: 0.5rem;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .players-coach-section {
+            .row {
+                .card {
+                    .player-details {
+                        .player-image {
+                            width: 100%;
+                            height: 70vh;
+                            object-fit:contain;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

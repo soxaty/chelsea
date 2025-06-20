@@ -1,0 +1,427 @@
+/* VARIABLES DE COLORES */
+/* VARIABLES DE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@900&family=Libre+Baskerville:wght@700&family=Roboto:wght@100&family=Rubik+80s+Fade&family=Rubik+Vinyl&family=Tilt+Prism&family=Tourney:wght@200&display=swap");
+header {
+  width: 100%;
+  height: 15vh;
+  background-color: white;
+}
+header .container-fluid {
+  background-color: white;
+}
+header .container-fluid a .logo {
+  width: 7.5rem;
+}
+header .container-fluid .navbar-collapse .fuentes {
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #001489;
+}
+header .container-fluid .navbar-collapse .fuentes li a {
+  color: #001489;
+}
+header .container-fluid .navbar-collapse .fuentes li a:hover {
+  color: #ec1c23;
+}
+
+@media screen and (max-width: 992px) {
+  header {
+    height: 15vh;
+    width: 100%;
+  }
+  header .container-fluid a .logo {
+    width: 6.5rem;
+  }
+  header .container-fluid .navbar-collapse .fuentes {
+    font-size: 1.5rem;
+  }
+}
+footer {
+  color: white;
+  background-color: #001489;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  width: 7.5rem;
+}
+
+.carousel-section {
+  padding: 0;
+}
+.carousel-section div {
+  background-color: #001489;
+  background: linear-gradient(to bottom, #000e73, #001489, #0d6efd);
+  font-weight: bolder;
+  border: 1px white solid;
+  border-radius: 0.5rem;
+}
+.carousel-section div .carousel-indicators {
+  background: none;
+  background-color: #FFD700;
+}
+.carousel-section div .carousel-indicators .active {
+  background-color: #ec1c23;
+}
+.carousel-section div .carousel-inner .carousel-item .imgCarousel {
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+}
+.carousel-section div .carousel-inner .carousel-item .carousel-caption h2 {
+  font-weight: bolder;
+}
+.carousel-section div .carousel-inner .carousel-item .carousel-caption p {
+  font-weight: bold;
+}
+
+.carousel-indicators button {
+  width: 100px;
+  height: 100px;
+  border-radius: 0%;
+  background-color: #eeff00;
+  border: none;
+  margin: 0 5px;
+}
+
+.last-video-home {
+  background-color: red;
+  border: 0.1rem solid rgb(170, 170, 170);
+  border-radius: 0.5rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding: 2rem 2rem;
+}
+.last-video-home .last-video-title {
+  margin-bottom: 2rem;
+}
+.last-video-home .last-video-title a h2 {
+  font-size: 3rem;
+  color: #ec1c23;
+  font-weight: 700;
+}
+.last-video-home .last-video-title a h2:hover {
+  color: #FFD700;
+  font-weight: bolder;
+}
+.last-video-home .card-container .card {
+  border: 0.12rem solid white;
+  background-color: #001489;
+}
+.last-video-home .card-container .card a {
+  text-decoration: none;
+  border-radius: 0.2rem;
+}
+.last-video-home .card-container .card a .imgLatestVideo {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+.last-video-home .card-container .card a div {
+  color: white;
+  font-weight: bolder;
+}
+.last-video-home .card-container .card:hover {
+  border: 0.12rem solid #FFD700;
+}
+.last-video-home .card-container .card:hover a div {
+  color: #FFD700;
+}
+
+.lastVideos-container .LastVideos-header {
+  height: 75vh;
+  width: 100%;
+  background-color: #001489;
+  background-image: url(https://www.chelseafc.com/assets/1.0.0.28212/0ca76aad10156c612955.png);
+  padding: 0;
+}
+.lastVideos-container .lastVideos-page {
+  position: relative;
+  top: -30rem;
+}
+.lastVideos-container .lastVideos-page div h1 {
+  font-family: "Tilt Prism", cursive;
+  font-size: 8rem;
+  color: white;
+}
+.lastVideos-container .lastVideos-page .card-container .card {
+  border: 0.125rem solid white;
+  background-color: #001489;
+}
+.lastVideos-container .lastVideos-page .card-container .card a {
+  text-decoration: none;
+  border-radius: 0.2rem;
+}
+.lastVideos-container .lastVideos-page .card-container .card a div {
+  color: white;
+  font-weight: bolder;
+}
+.lastVideos-container .lastVideos-page .card-container .card a .imgLatestVideo {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+.lastVideos-container .lastVideos-page .card-container .card:hover {
+  border: 0.125rem solid #FFD700;
+}
+.lastVideos-container .lastVideos-page .card-container .card:hover a div {
+  color: #FFD700;
+}
+.lastVideos-container .load-more-button {
+  margin-top: 5rem;
+  position: relative;
+  top: -25rem;
+}
+.lastVideos-container .load-more-button button {
+  background-color: #ffd700;
+  color: #001489;
+  font-weight: bolder;
+  border: 0.125rem #001489 solid;
+}
+.lastVideos-container .load-more-button button:hover {
+  background-color: #ffae00;
+}
+
+@media screen and (max-width: 992px) {
+  .lastVideos-container .lastVideos-page {
+    position: relative;
+    top: -35rem;
+  }
+  .lastVideos-container .lastVideos-page div h1 {
+    font-size: 2rem;
+  }
+}
+.sponsorSection {
+  background-color: white;
+}
+
+.main-chelsea-players {
+  border: 0;
+  padding: 0 0 10rem 0;
+}
+.main-chelsea-players .hero {
+  width: 100%;
+  height: 60vh;
+  background-color: #03f;
+  background-image: url(../recursos/background.png);
+  padding: 0;
+}
+.main-chelsea-players .hero div {
+  margin-left: 2rem;
+  color: white;
+}
+.main-chelsea-players .hero div h5 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.main-chelsea-players .hero div h1 {
+  font-family: "Tilt Prism", cursive;
+  font-size: 8rem;
+}
+.main-chelsea-players .players-coach-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.main-chelsea-players .players-coach-section .row .card {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border: 0.0015rem solid black;
+  border-radius: 0;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-number-container {
+  position: absolute;
+  top: 1%;
+  right: 3%;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-number-container .player-number {
+  font-size: 8rem;
+  font-family: "Tilt Prism", cursive;
+  color: rgb(190, 187, 187);
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-name-container {
+  position: absolute;
+  bottom: 5%;
+  right: 1%;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-name-container .first-name-container {
+  display: flex;
+  justify-content: end;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-name-container .first-name-container .first-name {
+  color: #001489;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-name-container .last-name-container .last-name {
+  background-color: #001489;
+  padding: 0.2rem 1rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-family: "Tilt Prism", cursive;
+  color: white;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-name-container .position-container {
+  display: flex;
+  justify-content: end;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-name-container .position-container .position {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: #001489;
+  font-family: "Roboto", sans-serif;
+}
+.main-chelsea-players .players-coach-section .row .card .player-details .player-image {
+  width: 100%;
+  height: 50vh;
+  object-fit: contain;
+}
+.main-chelsea-players .players-coach-section .row .card:hover {
+  background-color: #03f;
+  border: 0.0015rem white solid;
+}
+.main-chelsea-players .players-coach-section .row .card:hover .player-details .player-number-container .player-number {
+  color: white;
+}
+.main-chelsea-players .players-coach-section .row .card:hover .player-details .player-name-container .first-name-container .first-name {
+  color: white;
+  font-weight: bolder;
+}
+.main-chelsea-players .players-coach-section .row .card:hover .player-details .player-name-container .last-name-container .last-name {
+  border: 0.025rem white solid;
+}
+.main-chelsea-players .players-coach-section .row .card:hover .player-details .player-name-container .position-container .position {
+  color: white;
+}
+
+.women-chelsea-players .hero {
+  background-color: #bb2e7e;
+  background-image: url(../recursos/background.png);
+}
+.women-chelsea-players .players-coach-section .row .card:hover {
+  background-color: #bb2e7e;
+}
+
+@media screen and (max-width: 992px) {
+  .main-chelsea-players .hero {
+    height: 20vh;
+  }
+  .main-chelsea-players .hero div {
+    margin-left: 0.2rem;
+  }
+  .main-chelsea-players .hero div h5 {
+    font-size: 0.5rem;
+  }
+  .main-chelsea-players .hero div h1 {
+    font-size: 2rem;
+  }
+  .main-chelsea-players .players-coach-section .row .card .player-details .player-image {
+    width: 100%;
+    height: 70vh;
+    object-fit: contain;
+  }
+}
+main .features-section {
+  background-color: #f1f3f6;
+  background-color: white;
+}
+main .features-section .features-section-container .section-title h2 {
+  font-size: 2rem;
+  margin-top: 5rem;
+  font-family: "Libre Baskerville", serif;
+  color: #001489;
+}
+main .features-section .features-section-container .card-features-container .card-container {
+  margin-bottom: 1rem;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card {
+  background-color: #f1f3f6;
+  display: flex;
+  flex-direction: column;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-date h3 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: black;
+  margin: 0;
+  padding-top: 1rem;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-date h4 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: gray;
+  margin: 0;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-versus {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-versus .team1 img {
+  width: 8rem;
+}
+@media screen and (max-width: 992px) {
+  main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-versus .team1 img {
+    width: 6rem;
+  }
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-versus .time h2 {
+  font-family: "Libre Baskerville", serif;
+  color: #001489;
+  font-size: 3rem;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-button {
+  background-color: #001489;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-button a {
+  text-decoration: none;
+  color: #001489;
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  font-size: 1rem;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card .feature-button a:hover {
+  color: #FFD700;
+}
+main .features-section .features-section-container .card-features-container .card-container .feature-card:hover {
+  background-color: #FFD700;
+}
+
+main .features-section-home {
+  margin-bottom: 5rem;
+}
+main .features-section-home .features-section-container .section-title h2 {
+  margin-top: 0%;
+}
+main .features-section-home .features-section-container .section-title h2 a {
+  text-decoration: none;
+  color: #001489;
+}
+main .features-section-home .features-section-container .section-title h2 a:hover {
+  color: #0d6efd;
+}
+
+/*# sourceMappingURL=estilos.css.map */

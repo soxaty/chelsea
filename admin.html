@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Админка игроков</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-5">
+  <h1 class="mb-4">Администрирование игроков</h1>
+
+  <form id="addPlayerForm" class="row g-3 mb-5">
+    <input type="text" class="form-control" placeholder="Имя" id="firstName" required>
+    <input type="text" class="form-control" placeholder="Фамилия" id="lastName" required>
+    <input type="text" class="form-control" placeholder="Позиция" id="position" required>
+    <input type="number" class="form-control" placeholder="Возраст" id="age" required>
+    <input type="url" class="form-control" placeholder="Ссылка на изображение" id="image" required>
+    <textarea class="form-control" placeholder="Описание" id="description" required></textarea>
+    <textarea class="form-control" placeholder="Биография" id="bio"></textarea>
+    <input type="url" class="form-control" placeholder="Instagram (опционально)" id="instagram">
+    <input type="url" class="form-control" placeholder="Twitter (опционально)" id="twitter">
+    <button class="btn btn-success mt-3" type="submit">Добавить игрока</button>
+  </form>
+
+  <h2>Список игроков</h2>
+  <ul id="playerList" class="list-group"></ul>
+
+  <h2>Редактировать матчи / билеты</h2>
+<form id="ticketForm" class="row g-3 mb-4">
+  <select class="form-select" id="ticketCategory" required>
+    <option value="">Выберите категорию</option>
+    <option value="women">Женская команда</option>
+    <option value="men">Мужская команда</option>
+    <option value="academy">Академия</option>
+  </select>
+  <input type="text" class="form-control" placeholder="Тип билета (напр. VIP)" id="ticketType" required>
+  <input type="number" class="form-control" placeholder="Цена (£)" id="ticketPrice" required>
+  <button type="submit" class="btn btn-primary">Добавить билет</button>
+</form>
+
+<ul id="ticketList" class="list-group mb-5"></ul>
+
+
+  <script src="players.js"></script>
+  <script>
+    const list = document.getElementById("playerList");
+    const form = document.getElementById("addPlayerForm");
+
+    function renderList() {
+      list.innerHTML = "";
+      getPlayers().forEach((p, index) => {
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+        li.innerHTML = `
+          <div>
+            <strong>${p.firstName} ${p.lastName}</strong> - ${p.position}<br>
+            <small>${p.description}</small><br>
+            <small><em>Возраст:</em> ${p.age || "—"}</small><br>
+            <small><em>Био:</em> ${p.bio || "—"}</small>
+          </div>
+          <button class="btn btn-danger btn-sm">Удалить</button>
+        `;
+        li.querySelector("button").addEventListener("click", () => {
+          deletePlayer(index);
+          renderList();
+        });
+        list.appendChild(li);
+      });
+    }
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const socials = {};
+      if (form.instagram.value) socials.instagram = form.instagram.value;
+      if (form.twitter.value) socials.twitter = form.twitter.value;
+
+      const newPlayer = {
+        firstName: form.firstName.value.trim(),
+        lastName: form.lastName.value.trim(),
+        position: form.position.value.trim(),
+        image: form.image.value.trim(),
+        description: form.description.value.trim(),
+        age: form.age.value ? parseInt(form.age.value) : null,
+        bio: form.bio.value.trim(),
+        socials
+      };
+
+      addPlayer(newPlayer);
+      form.reset();
+      renderList();
+    });
+
+    renderList();
+  </script>
+
+
+<script>
+const ticketForm = document.getElementById('ticketForm');
+const ticketCategory = document.getElementById('ticketCategory');
+const ticketType = document.getElementById('ticketType');
+const ticketPrice = document.getElementById('ticketPrice');
+const ticketList = document.getElementById('ticketList');
+
+function getTickets() {
+  return JSON.parse(localStorage.getItem('tickets') || '[]');
+}
+
+function saveTickets(tickets) {
+  localStorage.setItem('tickets', JSON.stringify(tickets));
+}
+
+function renderTickets() {
+  const tickets = getTickets();
+  ticketList.innerHTML = '';
+  if (tickets.length === 0) {
+    ticketList.innerHTML = '<li class="list-group-item text-center">Билеты не добавлены</li>';
+    return;
+  }
+
+  tickets.forEach((ticket, index) => {
+    const li = document.createElement('li');
+    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+    li.innerHTML = `
+      <div>
+        <strong>${ticket.type}</strong> (${ticket.category}) - £${ticket.price}
+      </div>
+      <button class="btn btn-sm btn-danger">Удалить</button>
+    `;
+    li.querySelector('button').addEventListener('click', () => {
+      const updated = getTickets();
+      updated.splice(index, 1);
+      saveTickets(updated);
+      renderTickets();
+    });
+    ticketList.appendChild(li);
+  });
+}
+
+ticketForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const newTicket = {
+    category: ticketCategory.value,
+    type: ticketType.value.trim(),
+    price: parseFloat(ticketPrice.value)
+  };
+  const tickets = getTickets();
+  tickets.push(newTicket);
+  saveTickets(tickets);
+  ticketForm.reset();
+  renderTickets();
+});
+
+document.addEventListener('DOMContentLoaded', renderTickets);
+</script>
+
+</body>
+</html>
